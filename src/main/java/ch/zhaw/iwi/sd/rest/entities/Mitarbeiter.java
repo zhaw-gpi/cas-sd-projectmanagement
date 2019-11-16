@@ -9,15 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
 /**
  * Mitarbeiter
  */
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Mitarbeiter {
 
     @Id
@@ -27,7 +22,6 @@ public class Mitarbeiter {
     private String email;
 
     @OneToMany(mappedBy = "mitarbeiter")
-    @JsonIgnore
     private List<Einsatz> einsaetze = new ArrayList<>();
 
     public Integer getId() {

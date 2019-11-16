@@ -10,22 +10,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-
 /**
  * Einsatz
  */
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Einsatz {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne
-    @JsonManagedReference
     private Mitarbeiter mitarbeiter;
     @ManyToOne
     private Projekt projekt;
@@ -56,6 +50,22 @@ public class Einsatz {
 
     public void setProjekt(Projekt projekt) {
         this.projekt = projekt;
+    }
+
+    public Date getEinsatzStart() {
+        return einsatzStart;
+    }
+
+    public void setEinsatzStart(Date einsatzStart) {
+        this.einsatzStart = einsatzStart;
+    }
+
+    public Date getEinsatzEnde() {
+        return einsatzEnde;
+    }
+
+    public void setEinsatzEnde(Date einsatzEnde) {
+        this.einsatzEnde = einsatzEnde;
     }
     
     

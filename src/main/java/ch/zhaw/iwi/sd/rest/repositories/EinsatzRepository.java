@@ -4,14 +4,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import ch.zhaw.iwi.sd.rest.entities.Mitarbeiter;
+import ch.zhaw.iwi.sd.rest.entities.Einsatz;
 
 /**
- * MitarbeiterRepository
+ * EinsatzRepository
  */
 @CrossOrigin
-@RepositoryRestResource(collectionResourceRel = "mitarbeiter", path = "mitarbeiter")
-public interface MitarbeiterRepository extends JpaRepository<Mitarbeiter, Integer> {
+@RepositoryRestResource(collectionResourceRel = "einsatz", path = "einsaetze")
+public interface EinsatzRepository extends JpaRepository<Einsatz, Integer> {
 
     
 }
